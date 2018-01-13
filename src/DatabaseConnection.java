@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Properties;
+import java.util.*;
 
 class DatabaseConnection {
     private Connection conn;
@@ -41,7 +41,8 @@ class DatabaseConnection {
     //Odpowiada za wykonanie zapytania Select.
     public ResultSet executeSelectQuery(String queryName, String[] args) throws SQLException {
         String query = String.format(queries.getProperty(queryName), args);
-        Statement stmt = conn.createStatement();
+        Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                ResultSet.CONCUR_READ_ONLY); // Te parametry pozwalają się cofać w ResultSet
 
         return stmt.executeQuery(query);
 
@@ -61,5 +62,40 @@ class DatabaseConnection {
         }
     }
 
+    //metoda zamieniająca ResultSet na listę map (modelujemy w ten sposób tabelę jako obiekt w Javie)
+    public List<Map<String, String>> resultSetToArrayList(ResultSet rs) throws SQLException {
+        rs.beforeFirst();
+        ResultSetMetaData md = rs.getMetaData();
+        int columns = md.getColumnCount();
+        ArrayList list = new ArrayList(50);
+        while (rs.next()) {
+            HashMap row = new HashMap(columns);
+            for (int i = 1; i <= columns; ++i) {
+                row.put(md.getColumnName(i), rs.getObject(i));
+            }
+            list.add(row);
+        }
 
+
+        return list;
+
+    }
+
+    //metoda zamieniająca ResultSet na mapę list
+    Map<String, List<Object>> resultSetToMap(ResultSet rs) throws SQLException {
+        rs.beforeFirst();
+        ResultSetMetaData md = rs.getMetaData();
+        int columns = md.getColumnCount();
+        Map<String, List<Object>> map = new HashMap<>(columns);
+        for (int i = 1; i <= columns; ++i) {
+            map.put(md.getColumnName(i), new ArrayList<>());
+        }
+        while (rs.next()) {
+            for (int i = 1; i <= columns; ++i) {
+                map.get(md.getColumnName(i)).add(rs.getObject(i));
+            }
+        }
+
+        return map;
+    }
 }
