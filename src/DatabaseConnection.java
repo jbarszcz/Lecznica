@@ -48,6 +48,24 @@ class DatabaseConnection {
 
     }
 
+    //metoda do modyfikowania bazy (INSERT, UPDATE, itd)
+    public int executeUpdateQuery(String queryName, String[] args) throws SQLException {
+
+
+        String query = String.format(queries.getProperty(queryName), args);
+        Statement stmt = conn.createStatement();
+
+        return stmt.executeUpdate(query);
+    }
+
+    //metoda do generowania nowego ID przy wstawianiu. Używajmy jej za każdym razem gdy wstawiamy nowe wiersze żeby wszystko było ok.
+    public int getNextId(String tableName) throws SQLException {
+
+        ResultSet rs = executeSelectQuery("POBIERZ_LICZBE_WIERSZY", new String[]{tableName});
+        rs.next();
+        return rs.getInt(1) +1;
+    }
+
     //Do testów - Wyswietla wszystkie dane tabeli ta podstawie danego wyniku zapytania
     void printWholeResultSet(ResultSet rs) throws SQLException {
 
