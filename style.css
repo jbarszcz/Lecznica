@@ -1,0 +1,257 @@
+body
+{	 
+	/* Background pattern from Toptal Subtle Patterns */
+	background-image: url("img/brickwall.png");
+	font-size:20px;
+	font-family: 'Lato', sans-serif;
+}
+
+#div_Alert_Icon1
+{
+	float: left;
+	width: 100%;
+}
+
+.red
+{
+	color:#FF0000;
+}
+
+.green 
+{
+	color:#0f9944;
+}
+
+.blue 
+{
+	color:#1f00d1;
+}
+
+
+#div_loginPanel
+{
+	background-color:white;
+	width:300px;
+	padding:50px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:200px;
+	-webkit-box-shadow: 3px 3px 25px 6px rgba(0,0,0,0.9);
+	-moz-box-shadow: 3px 3px 25px 6px rgba(0,0,0,0.9);
+	box-shadow: 3px 3px 25px 6px rgba(0,0,0,0.9);
+}
+
+input[id=login],
+input[id=password]
+{
+	width:300px;
+	background-color:#efefef;
+	color:#666666;
+	border:2px solid #dddddd;
+	border-radius:5px;
+	font-size:20px;
+	padding:10px;
+	box-sizing:border-box;
+	outline:none;
+	margin-top:13px;
+}
+
+input[id=login]:focus,
+input[id=password]:focus
+{
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	border: 2px solid #a5cda5;
+	background-color:#e9f3e9;
+	color:#428392;
+}
+
+input[name=Stopic1],
+input[name=Stopic2],
+input[name=Stopic3],
+input[name=Stopic4],
+input[name=Stopic5],
+input[name=Stopic6]
+{
+	width:200px;
+	background-color:#efefef;
+	color:#666666;
+	border:2px solid #dddddd;
+	border-radius:5px;
+	font-size:20px;
+	padding:10px;
+	box-sizing:border-box;
+	outline:none;
+	margin-top:13px;
+}
+
+input[name=Stopic1]:focus,
+input[name=Stopic2]:focus,
+input[name=Stopic3]:focus,
+input[name=Stopic4]:focus,
+input[name=Stopic5]:focus,
+input[name=Stopic6]:focus
+{
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	border: 2px solid #a5cda5;
+	background-color:#e9f3e9;
+	color:#428392;
+}
+
+
+
+input[type=button]
+{
+	width:300px;
+	background-color:#36b03c;
+	font-size:20px;
+	color:white;
+	padding:15px 10px;
+	margin-top:30px;
+	border: none;
+	border-radius:5px;
+	cursor:pointer;
+	letter-spacing: 2px;
+	outline:none;
+}
+
+input[type=button]:focus
+{
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+}
+
+
+input[type=button]:hover
+{
+	background-color:#37b93d;
+}
+
+#Disconnect
+{
+	width:150px;
+	background-color:#a52e10;
+	font-size:17px;
+	color:white;
+	padding:15px 10px;
+	margin-top:15px;
+	border: none;
+	border-radius:5px;
+	cursor:pointer;
+	letter-spacing: 2px;
+	outline:none;
+}
+
+#Disconnect:focus
+{
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+}
+
+#Disconnect:hover
+{
+	background-color:#a63f21;
+}
+
+#Subscribe
+{
+	width:150px;
+	background-color:#36b03c;
+	font-size:17px;
+	color:white;
+	padding:15px 10px;
+	margin-top:30px;
+	border: none;
+	border-radius:5px;
+	cursor:pointer;
+	letter-spacing: 2px;
+	outline:none;
+}
+
+#Subscribe:focus
+{
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+}
+
+#Subscribe:hover
+{
+	background-color:#37b93d;
+}
+
+#Unsubscribe
+{
+	width:150px;
+	background-color:#a52e10;
+	font-size:17px;
+	color:white;
+	padding:15px 10px;
+	margin-top:15px;
+	border: none;
+	border-radius:5px;
+	cursor:pointer;
+	letter-spacing: 2px;
+	outline:none;
+}
+
+#Unsubscribe:focus
+{
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+}
+
+#Unsubscribe:hover
+{
+	background-color:#a63f21;
+}
+
+
+
+/*zmiana aktywnego koloru placeholder*/
+
+/*Chrome,Safari*/
+input::-webkit-input-placeholder
+{
+    color: #999;
+}
+input:focus::-webkit-input-placeholder
+{
+    color: #428C42;
+}
+
+/* Firefox < 19 */
+input:-moz-placeholder
+{
+    color: #999;
+}
+input:focus:-moz-placeholder
+{
+    color: #428C42;
+}
+
+/* Firefox > 19 */
+input::-moz-placeholder
+{
+    color: #999;
+}
+input:focus::-moz-placeholder
+{
+    color: #428C42;
+}
+
+/* Internet Explorer 10 */
+input:-ms-input-placeholder
+{
+    color: #999;
+}
+input:focus:-ms-input-placeholder
+{
+    color: #428C42;
+}
